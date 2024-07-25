@@ -1,0 +1,26 @@
+# Build files
+build
+dist
+old-dist
+*.egg-info
+*.so
+*.pyd
+*.pyc
+*.db
+*.pypirc
+MANIFEST
+
+# Cython generated files
+__pycache__
+
+# Editor files
+.idea
+.idea/*
+*~
+.project
+.pydevproject
+.settings/*
+.DS_Store
+.VSCodeCounter/*
+.travis/*
+.vscode/*

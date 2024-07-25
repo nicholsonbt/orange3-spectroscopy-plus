@@ -1,0 +1,11 @@
+# Ref https://docs.python.org/2/distutils/sourcedist.html#commands
+recursive-include orangecontrib *.ows icons/* datasets/* *.txt
+
+global-exclude __pycache__
+
+# Include requirements
+include requirements*.txt
+
+# Include it in the source package
+include README.pypi
+include LICENSE
