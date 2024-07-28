@@ -89,7 +89,7 @@ class OWMultiPlot(widget.OWWidget):
 
     description = "Test description."
 
-    icon = "icons/test.svg"
+    icon = "icons/multihyperspectra.svg"
 
     class Inputs:
         datas = widget.MultiInput("Datas", Orange.data.Table, default=True)
