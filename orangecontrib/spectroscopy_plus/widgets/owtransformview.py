@@ -91,7 +91,7 @@ class OWTransform(widget.OWWidget):
     class Outputs:
         data = widget.Output("Data", Orange.data.Table, default=True)
 
-    icon = "icons/shift.svg"
+    icon = "icons/transform_view.svg"
     priority = 20
 
 
