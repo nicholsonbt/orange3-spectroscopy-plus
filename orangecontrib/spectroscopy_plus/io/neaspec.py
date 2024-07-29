@@ -10,10 +10,10 @@ from orangecontrib.spectroscopy_plus.io.utils import MetaFormatter, transform_ro
 
 
 
-class Nea2Reader(FileFormat, SpectralFileFormat):
+class NeaReader(FileFormat, SpectralFileFormat):
 
     EXTENSIONS = (".nea", ".txt")
-    DESCRIPTION = 'NeaSPEC2'
+    DESCRIPTION = 'NeaSPEC (Improved)'
 
     def read_v1(self):
 
@@ -313,13 +313,6 @@ class Nea2Reader(FileFormat, SpectralFileFormat):
         return waveN, M, meta_data
 
 
-
-
-
-
-
-
-
     def read_spectra(self):
         version = 1
         with open(self.filename, "rt", encoding='utf-8') as f:
@@ -334,6 +327,6 @@ class Nea2Reader(FileFormat, SpectralFileFormat):
 if __name__ == "__main__":
     from Orange.data.table import dataset_dirs
     filename = None
-    reader = Nea2Reader(FileFormat.locate(filename, dataset_dirs))
+    reader = NeaReader(FileFormat.locate(filename, dataset_dirs))
 
     d = reader.read()
