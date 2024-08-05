@@ -83,7 +83,7 @@ def newAction(title, parent, checked=None, callback=None, shortcuts=None):
     return action
 
 
-
+### Unlink axis_model.
 class OWMultiPlot(widget.OWWidget):
     name = "MultiHyperSpectra"
 
@@ -126,7 +126,7 @@ class OWMultiPlot(widget.OWWidget):
         self.multiplot_layout = MultiPlotLayout(self)
 
         self.plotview = pg.GraphicsView()
-        self.plotview.setBackground("w")
+        self.plotview.setBackground("w") ### TODO: Background colour should be based on the theme.
         self.plotview.setCentralItem(self.multiplot_layout)
 
         self.tab_widget = QtWidgets.QTabWidget()
@@ -357,10 +357,20 @@ class OWMultiPlot(widget.OWWidget):
 
 
 
-    def __on_exception(self, idx, ex):
+    def __on_exception(self, *args):
+        ### TODO: FIXME
         assert QtCore.QThread.currentThread() is self.thread()
-        assert isinstance(self.status[idx], Task)
 
+        if len(args) == 1:
+            idx = None
+            ex = args[0]
+        elif len(args) == 2:
+            idx, ex = args
+            assert isinstance(self.status[idx], Task)
+        else:
+            idx = ex = None
+
+        print("!!!", idx, ex)
         print("ERROR!", idx, ex)
 
 
