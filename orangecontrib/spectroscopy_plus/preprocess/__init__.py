@@ -1,1 +1,0 @@
-from .chiptransition import ChipTransition
